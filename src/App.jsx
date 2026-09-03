@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 // Layout Components
 import Navbar from './components/layout/Navbar';
@@ -45,7 +45,29 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark bg-slate-900' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen ${darkMode ? 'dark bg-slate-950' : 'bg-zinc-950'}`}>
+      {/* Subtle neon grid overlay */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 0, 64, 0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+        }}
+      />
+      {/* Ambient neon glow */}
+      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(circle, rgba(255,0,64,0.08) 0%, transparent 70%)',
+        }}
+      />
+      <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%)',
+        }}
+      />
+
       <ScrollProgress />
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       

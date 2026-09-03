@@ -10,11 +10,24 @@
   --dark-card: #1e293b;
   --light-bg: #f8fafc;
   --light-card: #ffffff;
+
+  /* Neon Colors */
+  --neon-red: #ff0040;
+  --neon-red-glow: rgba(255, 0, 64, 0.4);
+  --neon-pink: #ff0080;
+  --neon-pink-glow: rgba(255, 0, 128, 0.4);
+  --neon-blue: #00d4ff;
+  --neon-blue-glow: rgba(0, 212, 255, 0.4);
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  color: #e2e8f0;
+  background-color: #09090b;
 }
 
 /* Custom scrollbar */
@@ -25,7 +38,7 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  background: linear-gradient(to bottom, var(--neon-red), var(--neon-pink), var(--neon-blue));
   border-radius: 4px;
 }
 
@@ -46,13 +59,33 @@ html {
 
 /* Gradient text */
 .gradient-text {
+  background: linear-gradient(135deg, var(--neon-red), var(--neon-pink), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Animated gradient background */
+/* Animated gradient background - Neon */
+.animated-gradient-neon {
+  background: linear-gradient(
+    270deg,
+    var(--neon-red),
+    var(--neon-pink),
+    var(--neon-blue),
+    var(--neon-red)
+  );
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Original animated gradient */
 .animated-gradient {
   background: linear-gradient(
     270deg,
@@ -71,13 +104,155 @@ html {
   100% { background-position: 0% 50%; }
 }
 
+/* Neon Glow Animations */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(60px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(80px);
+  }
+}
+
+@keyframes neonPulseSmall {
+  0%, 100% {
+    opacity: 0.5;
+    filter: blur(30px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(40px);
+  }
+}
+
+@keyframes neonFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes neonGlowBorder {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--neon-red-glow), 0 0 10px var(--neon-pink-glow), 0 0 15px var(--neon-blue-glow);
+  }
+  33% {
+    box-shadow: 0 0 5px var(--neon-red-glow), 0 0 15px var(--neon-pink-glow), 0 0 25px var(--neon-blue-glow);
+  }
+  66% {
+    box-shadow: 0 0 5px var(--neon-blue-glow), 0 0 10px var(--neon-red-glow), 0 0 20px var(--neon-pink-glow);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(2deg); }
+  66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes paperPlane {
+  0% { transform: translateX(0) translateY(0); opacity: 1; }
+  50% { transform: translateX(60px) translateY(-30px); opacity: 0.7; }
+  100% { transform: translateX(120px) translateY(-60px); opacity: 0; }
+}
+
+/* Animation utility classes */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+.animate-shimmer-fast {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Focus glow for inputs */
+.focus-glow:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+/* 3D tilt card perspective wrapper */
+.tilt-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.tilt-card-inner {
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Neon utility classes */
+.neon-glow-red {
+  box-shadow: 0 0 10px var(--neon-red-glow), 0 0 20px var(--neon-red-glow);
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 10px var(--neon-pink-glow), 0 0 20px var(--neon-pink-glow);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 10px var(--neon-blue-glow), 0 0 20px var(--neon-blue-glow);
+}
+
+.neon-glow-multi {
+  animation: neonGlowBorder 3s ease-in-out infinite;
+}
+
+.neon-text-glow {
+  text-shadow: 0 0 7px var(--neon-red-glow), 0 0 10px var(--neon-pink-glow), 0 0 21px var(--neon-blue-glow);
+}
+
+/* Neon Orb */
+.neon-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: neonPulse 4s ease-in-out infinite;
+}
+
+.neon-orb-small {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: neonPulseSmall 3s ease-in-out infinite, neonFloat 6s ease-in-out infinite;
+}
+
 /* Card hover effect */
 .card-hover {
   transition: all 0.3s ease;
 }
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 15px rgba(255, 0, 64, 0.1), 0 0 30px rgba(0, 212, 255, 0.05);
 }
 
 /* Skill bar animation */
@@ -132,7 +307,7 @@ html {
   transform: translateX(-50%);
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  background: linear-gradient(to bottom, var(--neon-red), var(--neon-pink), var(--neon-blue));
 }
 
 @media (max-width: 768px) {

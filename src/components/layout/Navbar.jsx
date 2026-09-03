@@ -7,12 +7,6 @@ import portfolioData from '../../data/portfolioData';
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Education', href: '#education' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Internship', href: '#internship' },
-  { name: 'Certifications', href: '#certifications' },
-  { name: 'Achievements', href: '#achievements' },
   { name: 'Resume', href: '#resume' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -62,19 +56,16 @@ export default function Navbar({ darkMode, setDarkMode }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.a
+<motion.a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center space-x-2"
+            className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 flex items-center justify-center text-white font-bold text-lg">
               {portfolioData.personalInfo.avatar}
             </div>
-            <span className="font-semibold text-lg text-gray-800 dark:text-white hidden sm:block">
-              Suryaprakash
-            </span>
           </motion.a>
 
           {/* Desktop Navigation */}

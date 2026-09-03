@@ -10,14 +10,18 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="relative py-20 bg-white dark:bg-slate-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="relative py-20 bg-zinc-900 dark:bg-zinc-900 overflow-hidden">
+      {/* Neon glow decorations */}
+      <div className="neon-orb w-[350px] h-[350px] top-0 right-0" style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%)', animationDelay: '0.8s' }}></div>
+      <div className="neon-orb w-[300px] h-[300px] bottom-0 left-0" style={{ background: 'radial-gradient(circle, rgba(255,0,128,0.08) 0%, transparent 70%)', animationDelay: '2.2s' }}></div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div className="text-center mb-16" {...fadeInUp} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             My <span className="gradient-text">Education</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Timeline */}
@@ -39,7 +43,7 @@ export default function Education() {
               >
                 {/* Timeline Icon (desktop) */}
                 <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 flex items-center justify-center text-white shadow-lg">
                     {item.icon === 'graduation' ? (
                       <HiAcademicCap className="w-6 h-6" />
                     ) : (
@@ -50,9 +54,9 @@ export default function Education() {
 
                 {/* Content Card */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                  <div className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-100 dark:border-blue-800 card-hover">
+                  <div className="p-6 rounded-xl bg-slate-700 border border-slate-600 card-hover">
                     <div className="flex md:hidden items-center space-x-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 flex items-center justify-center text-white">
                         {item.icon === 'graduation' ? (
                           <HiAcademicCap className="w-5 h-5" />
                         ) : (
@@ -60,17 +64,17 @@ export default function Education() {
                         )}
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                    <h3 className="text-lg font-semibold text-white mb-1">
                       {item.degree}
                     </h3>
-                    <p className="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">
+                    <p className="text-blue-400 text-sm font-medium mb-2">
                       {item.institution}
                     </p>
                     <div className="flex flex-wrap gap-3 text-sm">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-900/30 text-blue-300">
                         {item.year}
                       </span>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-purple-900/30 text-purple-300">
                         {item.score}
                       </span>
                     </div>

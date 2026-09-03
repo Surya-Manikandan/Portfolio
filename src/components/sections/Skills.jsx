@@ -27,14 +27,18 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="relative py-20 bg-gray-50 dark:bg-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="relative py-20 bg-zinc-800/50 dark:bg-zinc-800/50 overflow-hidden">
+      {/* Neon glow decorations */}
+      <div className="neon-orb w-[350px] h-[350px] top-1/4 -left-20" style={{ background: 'radial-gradient(circle, rgba(255,0,128,0.1) 0%, transparent 70%)', animationDelay: '0.5s' }}></div>
+      <div className="neon-orb w-[400px] h-[400px] -bottom-40 right-0" style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%)', animationDelay: '2s' }}></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div className="text-center mb-12" {...fadeInUp} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             My <span className="gradient-text">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Category Tabs */}
@@ -49,8 +53,8 @@ export default function Skills() {
               onClick={() => setActiveCategory(cat.id)}
               className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-600'
+                  ? 'bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 text-white shadow-lg'
+                  : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -75,23 +79,23 @@ export default function Skills() {
                 {portfolioData.technicalSkills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className="p-5 rounded-xl bg-white dark:bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover"
+                    className="p-5 rounded-xl bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                   >
                     <div className="flex justify-between items-center mb-3">
-                      <span className="font-medium text-gray-800 dark:text-white">
+                      <span className="font-medium text-white">
                         {skill.name}
                       </span>
-                      <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
+                      <span className="text-sm text-blue-400 font-semibold">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full h-2.5 bg-gray-200 dark:bg-slate-600 rounded-full overflow-hidden">
+                    <div className="w-full h-2.5 bg-slate-600 rounded-full overflow-hidden">
                       <motion.div
-                        className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 skill-bar"
+                        className="h-full rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 skill-bar"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
@@ -108,14 +112,14 @@ export default function Skills() {
                 {portfolioData.softSkills.map((skill, index) => (
                   <motion.div
                     key={skill}
-                    className="p-5 rounded-xl bg-white dark:bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover text-center"
+                    className="p-5 rounded-xl bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover text-center"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <HiUserGroup className="w-8 h-8 mx-auto mb-3 text-blue-500" />
-                    <span className="font-medium text-gray-800 dark:text-white">{skill}</span>
+                    <HiUserGroup className="w-8 h-8 mx-auto mb-3 text-blue-400" />
+                    <span className="font-medium text-white">{skill}</span>
                   </motion.div>
                 ))}
               </div>
@@ -126,14 +130,14 @@ export default function Skills() {
                 {portfolioData.toolsTechnologies.map((tool, index) => (
                   <motion.div
                     key={tool}
-                    className="p-5 rounded-xl bg-white dark:bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover text-center"
+                    className="p-5 rounded-xl bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover text-center"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <HiChip className="w-8 h-8 mx-auto mb-3 text-purple-500" />
-                    <span className="font-medium text-gray-800 dark:text-white">{tool}</span>
+                    <HiChip className="w-8 h-8 mx-auto mb-3 text-purple-400" />
+                    <span className="font-medium text-white">{tool}</span>
                   </motion.div>
                 ))}
               </div>
@@ -144,14 +148,14 @@ export default function Skills() {
                 {portfolioData.programmingLanguages.map((lang, index) => (
                   <motion.div
                     key={lang}
-                    className="p-6 rounded-xl bg-white dark:bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover text-center"
+                    className="p-6 rounded-xl bg-slate-700 shadow-sm hover:shadow-md transition-all card-hover text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <HiLightningBolt className="w-8 h-8 mx-auto mb-3 text-yellow-500" />
-                    <span className="font-medium text-gray-800 dark:text-white">{lang}</span>
+                    <span className="font-medium text-white">{lang}</span>
                   </motion.div>
                 ))}
               </div>

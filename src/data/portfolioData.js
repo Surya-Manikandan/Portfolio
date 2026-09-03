@@ -29,7 +29,7 @@ const portfolioData = {
       degree: "Master of Computer Applications (MCA)",
       institution: "Dr. Mahalingam College of Engineering and Technology, Pollachi",
       year: "2025 – 2027",
-      score: "CGPA – 7.2",
+      score: "CGPA – 7.4",
       icon: "graduation"
     },
     {
@@ -37,7 +37,7 @@ const portfolioData = {
       degree: "Bachelor of Science in Information Technology",
       institution: "Nallamuthu Gounder Mahalingam College, Pollachi",
       year: "May 2025",
-      score: "63%",
+      score: "67%",
       icon: "graduation"
     },
     {
@@ -109,15 +109,31 @@ const portfolioData = {
       github: "https://github.com/Surya-Manikandan",
       live: "",
       image: "/images/project-cancer.jpg",
-      status: "In Progress"
-    }
+      status: "Completed"
+},
+    {
+      id: 2,
+      name: "Poultry Management System",
+      description: "A Windows-based application designed to automate and streamline poultry farm operations. Manages chick batch tracking, feed and medicine inventory, delivery weight calculation, and payment processing. Built with VB.NET and MS-SQL Server.",
+      technologies: ["VB.NET", "MS-SQL Server", "ADO.NET", "Windows Forms"],
+      features: [
+        "Track batch details — chick breed, vaccinations, health status, growth tracking",
+        "Feed and medicine issue management with stock tracking",
+        "Delivery module with automated weight calculation and pricing",
+        "Payment module with outstanding invoice tracking"
+      ],
+      github: "https://github.com/Surya-Manikandan",
+      live: "",
+      image: "",
+      status: "Completed"
+    },
   ],
 
   internship: {
     company: "NextSkill Technologies",
     location: "Coimbatore",
-    role: "Full Stack Development Intern (MERN)",
-    duration: "6 Months",
+    
+    duration: "2 Weeks",
     workDone: [
       "Worked on full stack web development projects using MERN stack",
       "Developed responsive frontend components with React.js",
@@ -146,11 +162,19 @@ const portfolioData = {
     },
     {
       id: 3,
-      title: "UI & UX Designing",
-      issuer: "Mavenly",
+      title: "GenAI & Prompt Engg for QA, Automation & Performance Testing",
+      issuer: "Infosys Springboard",
       date: "",
-      image: "/images/cert-uiux.jpg",
+      image: "/images/cert-genai.jpg",
       link: ""
+    },
+    {
+      id: 4,
+      title: "Introduction to Data Science",
+      issuer: "Infosys Springboard",
+      date: "July 29, 2026",
+      image: "",
+      link: "https://verify.onwingspan.com"
     }
   ],
 
@@ -176,7 +200,7 @@ const portfolioData = {
     { name: "English", level: "Professional", proficiency: 80 }
   ],
 
-  hobbies: ["Music", "Coding", "Entertainment", "Learning New Technologies"],
+  hobbies: ["Music", "Coding", "Movies","Playing", "Learning New Technologies"],
 
   areaOfInterest: [
     "UI & UX Designing (Figma)",

@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Decorative top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-blue-500"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -23,7 +23,7 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <div className="flex items-center justify-center md:justify-start space-x-2 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 flex items-center justify-center text-white font-bold">
                   {portfolioData.personalInfo.avatar}
                 </div>
                 <span className="font-bold text-lg">{portfolioData.personalInfo.name}</span>
@@ -81,7 +81,7 @@ export default function Footer() {
             
             <motion.button
               onClick={scrollToTop}
-              className="inline-flex items-center justify-center p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all"
+className="inline-flex items-center justify-center p-3 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 text-white shadow-lg hover:shadow-xl transition-all"
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, y: 20 }}

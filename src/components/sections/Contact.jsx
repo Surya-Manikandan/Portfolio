@@ -88,23 +88,23 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-20 bg-white dark:bg-slate-900">
-      {/* Background decoration */}
+    <section id="contact" className="relative py-20 bg-zinc-900 dark:bg-zinc-900 overflow-hidden">
+      {/* Background decoration - neon glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-200/20 dark:bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-200/20 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="neon-orb w-[450px] h-[450px] -top-40 -right-40" style={{ background: 'radial-gradient(circle, rgba(255,0,64,0.1) 0%, transparent 70%)', animationDelay: '0s' }}></div>
+        <div className="neon-orb w-[400px] h-[400px] -bottom-40 -left-40" style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%)', animationDelay: '2.5s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div className="text-center mb-16" {...fadeInUp} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Have a project in mind or just want to say hi? I'd love to hear from you!
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-4"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 mx-auto rounded-full mt-4"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -186,7 +186,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-all disabled:opacity-50 cursor-pointer"
+                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 text-white font-medium shadow-lg hover:shadow-xl transition-all disabled:opacity-50 cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
